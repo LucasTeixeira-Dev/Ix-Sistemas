@@ -58,19 +58,22 @@ insert into usuario values
 (4,"Garcom00",md5("senha@123"),"Garçom");
 
 insert into mesa values
-(1,'mesa1',''),
-(2,'mesa2',''),
-(3,'mesa1',''),
-(4,'mesa1',''),
-(5,'mesa1','');
+(1,'mesa1',4),
+(2,'mesa2',4),
+(3,'mesa1',4),
+(4,'mesa1',4),
+(5,'mesa1',4);
 
 insert into produto values
-(1,'X-tudo','Humburguer, queijo, catupiry, calabresa, bacon, milho, alface, tomate no Pão de Humburguer','25,00$','Lanche');
+(1,'X-tudo','Humburguer, queijo, catupiry, calabresa, bacon, milho, alface, tomate no Pão de Humburguer','25,00$','Lanches');
+(2,'X-Salada','Humburguer, queijo, alface, tomate no pão de humburguer','15,00$','Lanches')
+(3,'X-Bacon','Humburguer, queijo , bacon, alface, tomate no Pão de humburguer','20,00$','Lanches')
+(4,'X-Burguer','Humburguer, queijo no Pão de Humburguer','12,00$','Lanches')
 
 insert into pedido values
-(1,'','','Em andamento','sem alface','');
-(2,'','','Aguardando','','');
-(1,'','','Feito','','');
+(1,1,'22/04/2021','21:30','Em andamento','sem alface');
+(2,2,'22/04/2021','19:43','Aguardando','bem passado');
+(3,3,'22/04/2021','20:20','Feito','sem observações');
 
 insert into itens values
 (1,1);
