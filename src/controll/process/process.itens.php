@@ -51,7 +51,7 @@
 
 		function doDelete($arr){
 			$id = new ItensDAO();
-			$result = $id->delete($arr["idPedido"]);
+			$result = $id->delete($arr["idPedido"],$arr["idProduto"]);
 			http_response_code(200);
 			echo json_encode($result);
 		}
