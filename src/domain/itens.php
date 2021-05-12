@@ -105,7 +105,7 @@
 			$idProduto = $pedido->getIdProduto();
 			$quantidade = $pedido->getQuantidade();
 			$result = array();
-			$query = "UPDATE itens SET idPedido = '$idPedido', idProduto = '$idProduto' , quantidade = '$quantidade' WHERE idPedido = $idPedido";
+			$query = "UPDATE itens SET quantidade = '$quantidade' WHERE idPedido = $idPedido and idProduto = $idProduto";
 			try {
 				
 				$con = new Connection();
@@ -124,16 +124,16 @@
 			return $result;
 		}
 
-		function delete($idPedido) {
+		function delete($idPedido,$idProduto) {
 			$result = array();
-			$query = "DELETE FROM itens WHERE idPedido = '$idPedido'";
+			$query = "DELETE FROM itens WHERE idPedido = $idPedido and idProduto = $idProduto";
 			try {
 				
 				$con = new Connection();
 				if(Connection::getInstance()->exec($query) >= 1){
-					$result[] = $pedido;
+					$result["sucesso"] = "item excluido com sucesso";
 				} else {
-					$result["err"] = "Nao foi possivel excluir pedido";
+					$result["err"] = "Nao foi possivel excluir item, valide o id do pedido e o id do produto";
 				}
 
 				$con = null;
