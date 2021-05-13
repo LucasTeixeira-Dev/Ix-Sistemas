@@ -10,8 +10,8 @@
 		"host" : "localhost",
 		"port" : "3306",
 		"dbname" : "ixsistemas",
-		"user" : "root",
-		"password" : ""
+		"user" : "SEU_USUARIO",
+		"password" : "SUA_SENHA"
 	},
 	"Class" : [
 		{
