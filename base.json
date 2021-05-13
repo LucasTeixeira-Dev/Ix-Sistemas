@@ -9,9 +9,9 @@
 	"Database" : {
 		"host" : "localhost",
 		"port" : "3306",
-		"dbname" : "ixsistemas",
-		"user" : "root",
-		"password" : ""
+		"dbname" : "id16812447_ixsistemas",
+		"user" : "id16812447_restaurante",
+		"password" : "MuitaFome1234$"
 	},
 	"Class" : [
 		{
