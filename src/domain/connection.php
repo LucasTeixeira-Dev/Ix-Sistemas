@@ -4,11 +4,11 @@
 		public static $instance;
 
 		public static function getInstance(){
-			$url = "mysql:host=localhost;port=3306;dbname=ixsistemas;";
+			$url = "mysql:host=localhost;port=3306;dbname=id16812447_ixsistemas;";
 
-			$user = "root";
+			$user = "id16812447_restaurante";
 
-			$password = "";
+			$password = "MuitaFome1234$";
 
 			$config = array(PDO::ATTR_PERSISTENT => true,PDO::ATTR_CASE => PDO::CASE_LOWER);
 
