@@ -6,9 +6,9 @@
 		public static function getInstance(){
 			$url = "mysql:host=localhost;port=3306;dbname=ixsistemas;";
 
-			$user = "root";
+			$user = "SEU_USUARIO";
 
-			$password = "";
+			$password = "SUA_SENHA";
 
 			$config = array(PDO::ATTR_PERSISTENT => true,PDO::ATTR_CASE => PDO::CASE_LOWER);
 
