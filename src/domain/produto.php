@@ -79,7 +79,7 @@
 				if($resultSet){
 					while($row = $resultSet->fetchObject()){
 						$produto = new Produto();
-						$produto->setIdProduto($row->idproduto);
+						$produto->setIdProduto($row->id_produto);
 						$produto->setNome($row->nome);
 						$produto->setDescricao($row->descricao);
 						$produto->setValor($row->valor);
@@ -105,11 +105,11 @@
 				$resultSet = Connection::getInstance()->query($query);
 					while($row = $resultSet->fetchObject()){
 						$produto = new Produto();
-						$produto->setIdProduto($row->idproduto);
+						$produto->setIdProduto($row->id_produto);
 						$produto->setNome($row->nome);
 						$produto->setDescricao($row->descricao);
 						$produto->setValor($row->valor);
-						$produto->setTipo($row->tipo);
+						$produto->setTipo($row->tipos);
 						$result[] = $produto;
 						
 				}

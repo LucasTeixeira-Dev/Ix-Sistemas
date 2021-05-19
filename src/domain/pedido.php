@@ -87,8 +87,8 @@
 				if($resultSet){
 					while($row = $resultSet->fetchObject()){
 						$pedido = new Pedido();
-						$pedido->setIdPedido($row->idpedido);
-						$pedido->setIdMesa($row->idmesa);
+						$pedido->setIdPedido($row->id_pedido);
+						$pedido->setIdMesa($row->id_mesa);
 						$pedido->setData($row->data);
 						$pedido->setHora($row->hora);
 						$pedido->setStatus($row->status);

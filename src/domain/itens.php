@@ -3,7 +3,6 @@
 	class Item {
 		var $idPedido;
 		var $idProduto;
-		var $quantidade;
 
 		function getIdPedido(){
 			return $this->idPedido;
@@ -18,12 +17,6 @@
 		function setIdProduto($idProduto){
 			$this->idProduto = $idProduto;
 		}
-		function getQuantidade(){
-			return $this->quantidade;
-		}
-		function setQuantidade($quantidade){
-			$this->quantidade = $quantidade;
-		}
 	}
 
 	class ItensDAO {
@@ -31,8 +24,7 @@
 			$result = array();
 			$idPedido = $itens->getIdPedido();
 			$idProduto = $itens->getIdProduto();
-			$quantidade = $itens->getQuantidade();
-			$query = "INSERT INTO itens VALUES ('$idPedido', '$idProduto', '$quantidade')";
+			$query = "INSERT INTO itens VALUES ('$idPedido', '$idProduto')";
 			try {
 				
 				$con = new Connection();
@@ -60,9 +52,8 @@
 				if($resultSet){
 					while($row = $resultSet->fetchObject()){
 						$item = new Item();
-						$item->setIdPedido($row->idpedido);
-						$item->setIdProduto($row->idproduto);
-						$item->setQuantidade($row->quantidade);
+						$item->setIdPedido($row->id_pedido);
+						$item->setIdProduto($row->id_produto);
 						$result[] = $item;
 
 				}

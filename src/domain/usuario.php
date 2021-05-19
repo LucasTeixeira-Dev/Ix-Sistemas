@@ -69,7 +69,7 @@
 				if($resultSet){
 					while($row = $resultSet->fetchObject()){
 					$usuario = new Usuario();
-					$usuario->setIdUsuario($row->idusuario);
+					$usuario->setIdUsuario($row->id_usuario);
 					$usuario->setLogin($row->login);
 					$usuario->setSenha($row->senha);
 					$usuario->setTipo($row->tipo);
@@ -93,7 +93,7 @@
 				$resultSet = Connection::getInstance()->query($query);
 					while($row = $resultSet->fetchObject()){
 					$usuario = new Usuario();
-					$usuario->setIdUsuario($row->idusuario);
+					$usuario->setIdUsuario($row->id_usuario);
 					$usuario->setLogin($row->login);
 					$usuario->setSenha($row->senha);
 					$usuario->setTipo($row->tipo);
