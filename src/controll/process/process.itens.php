@@ -8,7 +8,7 @@
 
 		function doGet($arr){
 			$id = new ItensDAO();
-			if($arr["idPedido"]=="0"){
+			if($arr["idPedido"]== 0){
 				$result = $id->readAll();
 			} else {
 				$result = $id->read($arr["idPedido"]);

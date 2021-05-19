@@ -8,7 +8,7 @@
 
 		function doGet($arr){
 			$ud = new UsuarioDAO();
-			if($arr["idUsuario"]=="0"){
+			if($arr["idUsuario"]== 0 ){
 				$result = $ud->readAll();
 			} else {
 				$result = $ud->read($arr["idUsuario"]);
