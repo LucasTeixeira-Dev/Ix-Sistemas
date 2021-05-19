@@ -8,7 +8,7 @@
 
 		function doGet($arr){
 			$md = new MesaDAO();
-			if($arr["idMesa"]=="0"){
+			if($arr["idMesa"]== 0){
 				$result = $md->readAll();
 			}else{
 				$result = $md->read($arr["idMesa"]);
