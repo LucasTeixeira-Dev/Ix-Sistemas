@@ -8,11 +8,11 @@
 
 		function doGet($arr){
 			$ud = new UsuarioDAO();
-			if($arr["idUsuario"]== 0 ){
+			//if($arr["idUsuario"]== 0 ){
 				$result = $ud->readAll();
-			} else {
-				$result = $ud->read($arr["idUsuario"]);
-			}
+			//} else {
+			//	$result = $ud->read($arr["idUsuario"]);
+			//}
 			http_response_code(200);
 			echo json_encode($result);
 		}

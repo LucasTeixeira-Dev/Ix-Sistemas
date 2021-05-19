@@ -8,11 +8,11 @@
 
 		function doGet($arr){
 			$pd = new PedidoDAO();
-			if($arr["idPedido"]== 0 ){
+			//if($arr["idPedido"]== 0 ){
 				$result = $pd->readAll();
-			}else{
-				$result = $pd->read($arr["idPedido"]);
-			}
+			//}else{
+			//	$result = $pd->read($arr["idPedido"]);
+			//}
 			http_response_code(200);
 			echo json_encode($result);
 		}

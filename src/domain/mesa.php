@@ -60,7 +60,7 @@
 				if($resultSet){
 				while($row = $resultSet->fetchObject()){
 					$mesa = new Mesa();
-					$mesa->setIdMesa($row->idmesa);
+					$mesa->setIdMesa($row->id_mesa);
 					$mesa->setDescricao($row->descricao);
 					$mesa->setIdUsuario($row->idusuario);
 					$result[] = $mesa;
@@ -83,9 +83,9 @@
 				$resultSet = Connection::getInstance()->query($query);
 				while($row = $resultSet->fetchObject()){
 					$mesa = new Mesa();
-					$mesa->setIdMesa($row->idmesa);
+					$mesa->setIdMesa($row->id_mesa);
 					$mesa->setDescricao($row->descricao);
-					$mesa->setIdUsuario($row->idusuario);
+					$mesa->setIdUsuario($row->id_usuario);
 					$result[] = $mesa;
 				}
 
