@@ -36,7 +36,115 @@
 	}
 
 	class UsuarioDAO {
+		//DAO 000webHost
 		function create($usuario) {
+			$result = array();
+			
+			$login = $usuario->getLogin();
+			$senha = $usuario->getSenha();
+			$tipo = $usuario->getTipo();
+			
+			try {
+                $query = "INSERT INTO usuario (login, senha, tipo) VALUES ('$login', '$senha', '$tipo')";
+                
+				$con = new Connection();
+				if(Connection::getInstance()->exec($query) >= 1){
+					$result["id_usuario"] = Connection::getInstance()->lastInsertId();
+					$result["status"] = "SUCESSO";
+				} else {
+					$result["status"] = "ERRO";
+				}
+
+				$con = null;
+			}catch(PDOException $e) {
+				$result["status"] = "PDO".$e->getCode();
+			}
+
+			return $result;
+		}
+
+		function read($id_usuario) {
+			$result = array();
+			
+			try {
+			    if($id_usuario == 0){
+			        $cond = "";
+			    }else{
+			        $cond = " WHERE id_usuario = $id_usuario";
+			    }
+				$query = "SELECT * FROM usuario" . $cond;
+				
+				$con = new Connection();
+				
+				$resultSet = Connection::getInstance()->query($query);
+			    while($row = $resultSet->fetchObject()){
+			        $result[] = $row;
+			    }
+			    
+				$con = null;
+			}catch(PDOException $e) {
+				$result["status"] = "PDO".$e->getCode();
+			}
+
+			return $result;
+		}
+
+		function update($u) {
+			$result = array();
+			
+			$id_usuario = $u->getId_usuario();
+			$login = $u->getLogin();
+			$senha = $u->getSenha();
+			$tipo = $u->getTipo();
+			
+		
+			try {
+	            $query = "UPDATE usuario SET login = '$login',
+	                                         senha = '$senha',
+	                                         tipo = '$tipo' 
+	                                         WHERE id_usuario = $id_usuario";
+	                                         
+				$con = new Connection();
+				
+				$status = Connection::getInstance()->prepare($query);
+				
+				if($status->execute()){
+					$result["status"] = "SUCESSO";
+				} else {
+					$result["status"] = "ERRO";
+				}
+
+				$con = null;
+			}catch(PDOException $e) {
+				$result["status"] = "PDO".$e->getCode();
+			}
+			return $result;
+		}
+
+		function delete($id_usuario) {
+			$result = array();
+			
+			$query = "DELETE FROM usuario WHERE id_usuario = '$id_usuario'";
+			try {
+				
+				$con = new Connection();
+				if(Connection::getInstance()->exec($query) >= 1){
+					$result["status"] = "SUCESSO";
+				} else {
+					$result["status"] = "ERRO";
+				}
+
+				$con = null;
+			}catch(PDOException $e) {
+				$result["status"] = "PDO".$e->getCode();
+			}
+
+			return $result;
+		}
+	}
+}
+		/* DAO Local
+			function create($usuario) {
 			$result = array();
 			$login = $usuario->getLogin();
 			$senha = $usuario->getSenha();
@@ -151,4 +259,4 @@
 
 			return $result;
 		}
-	}
+	}*/
