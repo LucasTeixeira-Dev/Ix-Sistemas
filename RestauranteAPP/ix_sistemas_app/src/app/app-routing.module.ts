@@ -22,7 +22,11 @@ const routes: Routes = [
     {
     path: 'promocao',
     loadChildren: () => import('./pages/promocao/promocao.module').then( m => m.PromocaoPageModule)
+  },  {
+    path: 'cart-modal',
+    loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
   },
+
 ];
 @NgModule({
   imports: [
