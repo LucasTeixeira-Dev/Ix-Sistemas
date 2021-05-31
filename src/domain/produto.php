@@ -7,11 +7,11 @@
 		var $valor;
 		var $tipo;
 
-		function getIdProduto(){
-			return $this->idProduto;
+		function getId_produto(){
+			return $this->id_produto;
 		}
-		function setIdProduto($idProduto){
-			$this->idProduto = $idProduto;
+		function setId_produto($id_produto){
+			$this->id_produto = $id_produto;
 		}
 
 		function getNome(){
@@ -42,13 +42,13 @@
 			$this->tipo = $tipo;
 		}
 	}
-	// DAO 00webHost	
+	
 	class ProdutoDAO {
 		function create($produto) {
 			$result = array();
-			$nome = $produto->getNome();
-			$descricao =$produto->getDescricao();
-			$valor =$produto->getValor();
+			$nome =$produto->getNome();
+			$descricao = $produto->getDescricao();
+			$valor = $produto->getValor();
 			$tipo = $produto->getTipo();
 		
 			try {
@@ -157,7 +157,48 @@
 		}
 	}
 }
-	/* DAO Local
+	/*Local
+	var $idProduto;
+		var $nome;
+		var $descricao;
+		var $valor;
+		var $tipo;
+
+		function getIdProduto(){
+			return $this->idProduto;
+		}
+		function setIdProduto($idProduto){
+			$this->idProduto = $idProduto;
+		}
+
+		function getNome(){
+			return $this->nome;
+		}
+		function setNome($nome){
+			$this->nome = $nome;
+		}
+
+		function getDescricao(){
+			return $this->descricao;
+		}
+		function setDescricao($descricao){
+			$this->descricao = $descricao;
+		}
+
+		function getValor(){
+			return $this->valor;
+		}
+		function setValor($valor){
+			$this->valor = $valor;
+		}
+
+		function getTipo(){
+			return $this->tipo;
+		}
+		function setTipo($tipo){
+			$this->tipo = $tipo;
+		}
+	}
 	class ProdutoDAO {
 		function create($produto) {
 			$result = array();

@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+    <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Ix-sistemas</title>
+    
+</head>
+
+<body onload="listaPedido()">
+    <header class="menu-principal">
+        <main>
+            <div class="header-1">
+                <div class="logo">
+                    <img src="./assets/logo.png" width="100" height="100" />
+                </div>
+                <div class="redes-sociais">
+                    <div class="sm">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div> 
+                </div>
+            </div>
+        </main>
+    </header>
+    <main class="col-100 menu-urls">
+        <div class="header-2">
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="./home.html">Inicío</a>
+                    </li>
+                    <li>
+                        <a href="./cardapio.html">Cardapio</a>
+                    </li>
+                    <li>
+                        <a href="./pedido.html">Pedidos</a>
+                    </li>
+                    <li>
+                        <a href="./mesa.html">Mesas</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="busca">
+                <input placeholder="Search Something" type="text" />
+            </div>
+        </div>
+    </main>
+                                                <!-- COMEÇO DO CARDAPIO -->
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Pedidos</th>
+        </tr>
+        <tr>
+            <th>id_pedido</th>
+            <th>id_mesa</th>
+            <th>data</th>
+            <th>hora</th>
+            <th>status</th>
+            <th>obs</th>
+        </tr>
+    </thead>
+        <tbody id="pedido">
+        </tbody>
+            <tfoot >
+                <tr>
+                       <form>
+                           <td></td>
+                           <td><input type="number" id="id_mesa"></td>
+                           <td><input type="text" id="data" ></td>
+                           <td><input type="text" id="hora" ></td>
+                           <td><input type="text" id="status" ></td>
+                           <td><input type="text" id="obs" ></td>     
+                           <td><button type="button" value="Criar" onclick="criaPedido()">Criar Pedido</button></td>
+                      
+                       </form>
+                </tr>
+            </tfoot>
+               <div class="msg">
+                  <p id="mensagem">Mensagens do Sistema</p>
+              </div>
+    </table>
+    <footer>
+        <div class="col-100 footer">
+            <div class="content">
+                <div class="col-4">
+                    <h3><b>Comunidade</b></h3>
+                    <p>Lacnhes otimos, vou voltar mais<b class="clock">22:33</b></p>
+                    <p>Preparam meu pedido bem rapido<b class="clock">20:41</b></p>
+                    <p>Achei que o Tablet ficava cmg :(<b class="clock">22:26</b></p>
+                    <p>A inovação que fizeram é otima<b class="clock">23:07</b></p>
+                </div>
+                <div class="col-4">
+                    <h3><b>Sobre Nos</b></h3>
+                    <p>
+                        Ix-Sistemas é um programa de auxílio para bares, lanchonetes e restaurantes. 
+                        Ele tem como objetivo, evitar aglomeração e facilitar a realização de pedidos.
+                         De forma autonôma e simples, o próprio cliente pode fazer seu pedido, sendo mandado diretamente para a cozinha.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3><b>Suporte</b></h3>
+                    <p>
+                        Em caso de duvidas por favor entrar em contato conosco, vamos te ajudar na medida do possivel desde ja, muito obrigado.
+                    </p>
+                    <p class="local">jaguaríuna, SP<p>
+                            <p class="emailico">email@email.com<p>
+                                    <p class="telefoneico">(19)01234-5678<p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="col-100 footer-2">
+        <div class="content">
+
+            <p>
+                CONFIRA NOSSO SITE E BOM  APETITE!
+            </p>
+        </div>
+    </div>
+    <script src="pedido.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>

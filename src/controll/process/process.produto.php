@@ -91,10 +91,10 @@
 
 		function doGet($arr){
 			$pd = new ProdutoDAO();
-			if($arr["idProduto"]== 0 ){
+			if($arr["id_produto"]== 0 ){
 				$result = $pd->readAll();
 			} else {
-				$result = $pd->read($arr["idProduto"]);
+				$result = $pd->read($arr["id_produto"]);
 			}
 			http_response_code(200);
 			echo json_encode($result);
@@ -107,7 +107,7 @@
 			$produto->setNome($arr["nome"]);
 			$produto->setDescricao($arr["descricao"]);
 			$produto->setValor($arr["valor"]);
-			$produto->setTipo($arr["tipo"]);
+			$produto->setTipo($arr["tipos"]);
 			$result = $pd->create($produto);
 			if(is_object($result)){
 				echo '{"mensagem":"Produto cadastrado com sucesso"}';
@@ -120,11 +120,11 @@
 		function doPut($arr){
 			$pd = new ProdutoDAO();
 			$produto = new Produto();
-			$produto->setIdProduto($arr["idProduto"]);
+			$produto->setId_produto($arr["id_produto"]);
 			$produto->setNome($arr["nome"]);
 			$produto->setDescricao($arr["descricao"]);
 			$produto->setValor($arr["valor"]);
-			$produto->setTipo($arr["tipo"]);
+			$produto->setTipo($arr["tipos"]);
 			$result = $pd->update($produto);
 			if(is_object($result)){
 				echo '{"mensagem":"Produto alterado com sucesso"}';
@@ -134,7 +134,7 @@
 		}
 		function doDelete($arr){
 			$pd = new ProdutoDAO();
-			$result = $pd->delete($arr["idProduto"]);
+			$result = $pd->delete($arr["id_produto"]);
 			http_response_code(200);
 			echo json_encode($result);
 		}
