@@ -1,13 +1,13 @@
-<html>
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+        <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <title>Ix-sistemas</title>
+    </head>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
-    <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
-    <title>Ix-sistemas</title>
-</head>
-
-<body>
+<body onload="listaProduto()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -15,28 +15,12 @@
                     <img src="./assets/logo.png" width="100" height="100" />
                 </div>
                 <div class="redes-sociais">
-                    <ul>
-                        <li>
-                            <a href="">
-                                <img src="./assets/rss.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./assets/face.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./assets/tw.png" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img src="./assets/linkedin.png" />
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="sm">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div> 
                 </div>
             </div>
         </main>
@@ -52,7 +36,13 @@
                         <a href="./cardapio.html">Cardapio</a>
                     </li>
                     <li>
-                        <a href="">Convid-19</a>
+                        <a href="./pedido.html">Pedidos</a>
+                    </li>
+                    <li>
+                        <a href="./mesa.html">Mesas</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -63,17 +53,40 @@
     </main>
                                                 <!-- COMEÇO DO CARDAPIO -->
 
-
-
-
-                                                <!-- FIM DO CARDAPIO -->
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Cardapio</th>
+        </tr>
+        <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+        <tbody id="produto">
+        </tbody>
+            <tfoot >
+                <tr>
+                       <form>
+                            <td></td>
+                           <td><input type="text" id="nome"></td>
+                           <td><input type="text" id="descricao"></td>
+                           <td><input type="text" id="valor"></td>
+                           <td><input type="text" id="tipos"></td>
+                           <td><button type="button" value="Criar" onclick="criaProduto()">Criar Produto</button></td>
+                       </form>
+                </tr>
+            </tfoot>
+               <div class="msg">
+                  <p id="mensagem">Mensagens do Sistema</p>
+              </div>
+    </table>
     <footer>
         <div class="col-100 footer">
             <div class="content">
-                <div class="col-4">
-                    <h3><b>Venha fazer parte</b></h3>
-                    <p>Ainda não faz parte do nosso site por favor <a href="./login.html">clique aqui </a>para se inscrever. Ao se increver você estará nos ajudando e apoidando nosso trabalho.</p>
-                </div>
                 <div class="col-4">
                     <h3><b>Comunidade</b></h3>
                     <p>Lacnhes otimos, vou voltar mais<b class="clock">22:33</b></p>
@@ -105,10 +118,11 @@
         <div class="content">
 
             <p>
-                Ao utilizar nosso site, você reconhece que leu e compreendeu nossa Política de Cookies e nossa Política de Privacidade.
+                CONFIRA NOSSO SITE E BOM  APETITE!
             </p>
         </div>
     </div>
+    <script src="cardapio.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>

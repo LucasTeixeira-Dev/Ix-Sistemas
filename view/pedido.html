@@ -6,9 +6,10 @@
     <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <title>Ix-sistemas</title>
+    
 </head>
 
-<body>
+<body onload="listaPedido()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -29,52 +30,65 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul><center>
+                <ul>
                     <li>
-                        <a href="./homecliente.html">Inicío</a>
+                        <a href="./home.html">Inicío</a>
                     </li>
                     <li>
-                        <a href="./cardapiocliente.html">Cardapio</a>
+                        <a href="./cardapio.html">Cardapio</a>
+                    </li>
+                    <li>
+                        <a href="./pedido.html">Pedidos</a>
+                    </li>
+                    <li>
+                        <a href="./mesa.html">Mesas</a>
                     </li>
                     <li>
                         <a href="./login.html">Login</a>
                     </li>
-                </center>
                 </ul>
+            </div>
+            <div class="busca">
+                <input placeholder="Search Something" type="text" />
             </div>
         </div>
     </main>
+                                                <!-- COMEÇO DO CARDAPIO -->
 
-     <div class="login-wrap" style="margin-left: 400px;">
-	<div class="login-html">
-        <label><h1><center>Acessar ao Ix-Sistema</center></h1></label>
-		<div class="login-form">
-				<div class="group">
-					<label for="login" class="label">Login</label>
-					<input id="login" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="senha" class="label">Senha:</label>
-					<input id="senha" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Continuar conectado</label>
-				</div>
-					<button type="button" value="Logar" onclick="Logar('Logar')" style="width: 375px; height: 37px; background-color: #ffd600; border-radius: 16px;">Logar</button>
-				</div>
-				
-				
-					<a href="#forgot">Esqueceu a Senha?</a>
-				</div>
-			</div>
-			
-				</div>
-		</div>
-	</div>
-</div>                                        
-                                                <!-- FIM DO FORMULARIO -->
-</p>
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Pedidos</th>
+        </tr>
+        <tr>
+            <th>id_pedido</th>
+            <th>id_mesa</th>
+            <th>data</th>
+            <th>hora</th>
+            <th>status</th>
+            <th>obs</th>
+        </tr>
+    </thead>
+        <tbody id="pedido">
+        </tbody>
+            <tfoot >
+                <tr>
+                       <form>
+                           <td></td>
+                           <td><input type="number" id="id_mesa"></td>
+                           <td><input type="text" id="data" ></td>
+                           <td><input type="text" id="hora" ></td>
+                           <td><input type="text" id="status" ></td>
+                           <td><input type="text" id="obs" ></td>     
+                           <td><button type="button" value="Criar" onclick="criaPedido()">Criar Pedido</button></td>
+                      
+                       </form>
+                </tr>
+            </tfoot>
+               <div class="msg">
+                  <p id="mensagem">Mensagens do Sistema</p>
+              </div>
+    </table>
     <footer>
         <div class="col-100 footer">
             <div class="content">
@@ -113,7 +127,7 @@
             </p>
         </div>
     </div>
-    <script src="login.js"></script>
+    <script src="pedido.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>

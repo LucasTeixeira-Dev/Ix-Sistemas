@@ -6,9 +6,10 @@
     <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <title>Ix-sistemas</title>
+    
 </head>
 
-<body>
+<body onload="listaMesa()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -29,52 +30,56 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul><center>
+                <ul>
                     <li>
-                        <a href="./homecliente.html">Inicío</a>
+                        <a href="./home.html">Inicío</a>
                     </li>
                     <li>
-                        <a href="./cardapiocliente.html">Cardapio</a>
+                        <a href="./cardapio.html">Cardapio</a>
+                    </li>
+                    <li>
+                        <a href="./pedido.html">Pedidos</a>
+                    </li>
+                    <li>
+                        <a href="./mesa.html">Mesas</a>
                     </li>
                     <li>
                         <a href="./login.html">Login</a>
                     </li>
-                </center>
                 </ul>
+            </div>
+            <div class="busca">
+                <input placeholder="Search Something" type="text" />
             </div>
         </div>
     </main>
-
-     <div class="login-wrap" style="margin-left: 400px;">
-	<div class="login-html">
-        <label><h1><center>Acessar ao Ix-Sistema</center></h1></label>
-		<div class="login-form">
-				<div class="group">
-					<label for="login" class="label">Login</label>
-					<input id="login" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="senha" class="label">Senha:</label>
-					<input id="senha" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Continuar conectado</label>
-				</div>
-					<button type="button" value="Logar" onclick="Logar('Logar')" style="width: 375px; height: 37px; background-color: #ffd600; border-radius: 16px;">Logar</button>
-				</div>
-				
-				
-					<a href="#forgot">Esqueceu a Senha?</a>
-				</div>
-			</div>
-			
-				</div>
-		</div>
-	</div>
-</div>                                        
-                                                <!-- FIM DO FORMULARIO -->
-</p>
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Lista de Mesas</th>
+        </tr>
+        <tr>
+            <th>id_mesa</th>
+            <th>Descrição</th>
+            <th>id_usuario</th>
+        </tr>
+    </thead>
+        <tbody id="mesa">
+        </tbody>
+            <tfoot >
+                <tr>
+                       <form> 
+                           <td></td>
+                           <td><input type="text" id="descricao"></td>
+                           <td><input type="text" id="id_usuario"></td>
+                           <td><button type="button" value="Criar" onclick="criaMesa()">Criar Mesa</button></td>
+                       </form>
+                </tr>
+            </tfoot>
+            <div class="msg">
+                <p id="mensagem">Mensagens do Sistema</p>
+            </div>
+    </table>
     <footer>
         <div class="col-100 footer">
             <div class="content">
@@ -113,7 +118,7 @@
             </p>
         </div>
     </div>
-    <script src="login.js"></script>
+    <script src="mesa.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>

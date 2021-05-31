@@ -5,6 +5,77 @@
 
 	class MesaProcess {
 		var $md;
+		var $m;
+
+		function doGet($arr){
+			if(isset($arr["id_mesa"])){
+			    $md = new MesaDAO;
+				$result = $md->read($arr["id_mesa"]);
+			}else{
+				$result["status"] = "ERRO-02";
+			}
+			http_response_code(200);
+			echo json_encode($result);
+		}
+
+
+		function doPost($arr){
+		if(isset($arr["verbo"])) {
+				if($arr["verbo"] == "POST") {
+					if(
+						isset($arr["descricao"]) &&
+						isset($arr["id_usuario"]) 
+					){
+						$m = new Mesa();
+						$m->setDescricao($arr["descricao"]);
+						$m->setId_usuario($arr["id_usuario"]);
+		
+						$md = new MesaDAO();
+						$result = $md->create($m);
+					}else {
+						$result["status"] = "ERRO-02";
+					}
+				}else if($arr["verbo"] == "DELETE") {
+					if(isset($arr["id_mesa"])) {
+						if($arr["id_mesa"] > 0) {
+							$md = new MesaDAO();
+							$result = $md->delete($arr["id_mesa"]);
+						}else {
+							$result["status"] = "ERRO-03";
+						}				
+					}else {
+						$result["status"] = "ERRO-4";
+					}
+				}else if($arr["verbo"] == "PUT") {
+					if(
+						isset($arr["id_mesa"]) &&
+						isset($arr["descricao"]) &&
+						isset($arr["id_usuario"]) 
+					){
+						$m = new Mesa();
+						$m->setId_mesa($arr["id_mesa"]);
+						$m->setDescricao($arr["descricao"]);
+						$m->setId_usuario($arr["id_usuario"]);
+		
+						$md = new MesaDAO();
+						$result = $md->update($m);
+					}else {
+						$result["status"] = "ERRO-02";
+					}
+				}else {
+					$result["status"] = "ERRO-04";
+				}
+			}else {
+				$result["status"] = "ERRO-05";
+			}
+
+			http_response_code(200);
+			echo json_encode($result);
+		}
+
+	}
+	/*class MesaProcess {
+		var $md;
 
 		function doGet($arr){
 			 
