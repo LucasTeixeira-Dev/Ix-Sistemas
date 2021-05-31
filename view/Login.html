@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/slick.css" />
@@ -37,7 +37,7 @@
                         <a href="./cardapiocliente.html">Cardapio</a>
                     </li>
                     <li>
-                        <a href="./login.html">Login</a>
+                        <a href="./login.html">Sign In</a>
                     </li>
                 </center>
                 </ul>
@@ -61,7 +61,8 @@
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Continuar conectado</label>
 				</div>
-					<button type="button" value="Logar" onclick="Logar('Logar')" style="width: 375px; height: 37px; background-color: #ffd600; border-radius: 16px;">Logar</button>
+                <div class="group">
+					<button type="button" value="Acessar" onclick="acessar()" style="width: 375px; height: 37px; background-color: #ffd600; border-radius: 16px;">Logar</button>
 				</div>
 				
 				
@@ -73,8 +74,9 @@
 		</div>
 	</div>
 </div>                                        
-                                                <!-- FIM DO FORMULARIO -->
-</p>
+<div class="msg">
+    <p id="mensagem">Mensagens do Sistema</p>
+</div>
     <footer>
         <div class="col-100 footer">
             <div class="content">
