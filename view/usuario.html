@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./css/main.css">
-        <link rel="stylesheet" type="text/css" href="./css/slick.css" />
-        <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        <title>Ix-sistemas</title>
-    </head>
+<html>
 
-<body onload="listaProduto()">
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+    <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Ix-sistemas</title>
+    
+</head>
+
+<body onload="listaUsuario()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -54,32 +56,29 @@
             </div>
         </div>
     </main>
-                                                <!-- COMEÇO DO CARDAPIO -->
-
 <table>
     <thead>
         <tr>
-            <th colspan="8">Cardapio</th>
+            <th colspan="8">Usuário</th>
         </tr>
         <tr>
-            <th>id</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Tipo</th>
+            <th>id_usuario</th>
+            <th>login</th>
+            <th>senha</th>
+            <th>tipo</th>
         </tr>
     </thead>
-        <tbody id="produto">
+        <tbody id="usuario">
         </tbody>
             <tfoot >
                 <tr>
                        <form>
-                            <td></td>
-                           <td><input type="text" id="nome"></td>
-                           <td><input type="text" id="descricao"></td>
-                           <td><input type="text" id="valor"></td>
-                           <td><input type="text" id="tipos"></td>
-                           <td><button type="button" value="Criar" onclick="criaProduto()">Criar Produto</button></td>
+                           <td></td>
+                           <td><input type="text" id="login" ></td>
+                           <td><input type="text" id="senha" ></td>
+                           <td><input type="text" id="tipo" ></td>  
+                           <td><button type="button" value="Criar" onclick="criaUsuario()">Criar Usuário</button></td>
+                      
                        </form>
                 </tr>
             </tfoot>
@@ -125,7 +124,7 @@
             </p>
         </div>
     </div>
-    <script src="cardapio.js"></script>
+    <script src="usuario.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>
