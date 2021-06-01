@@ -348,7 +348,7 @@ a{color:blue;}
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
-	background:rgba(0, 0, 0, 0.1);
+	background:#ffffff);
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
