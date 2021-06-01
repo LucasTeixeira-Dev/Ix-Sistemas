@@ -17,10 +17,10 @@ function acessar() {
                     msg.innerHTML = resp.erro;
                 } else {
                     let destino = "";
-                    if (resp.tipo === "Gerente") {
-                        destino += "home.html";
+                    if (resp.tipo[0] === "Gerente") {
+                        destino += "../index-ge.html";
                     } else {
-                        destino += "../index.html";
+                        destino += "./login.html";
                     }
 					window.localStorage.setItem("login",resp.login);
 					window.localStorage.setItem("id", resp.id_usuario);
@@ -35,4 +35,3 @@ function acessar() {
     }
     setTimeout(() => { msg.innerHTML = "Mensagens do sistema"; }, 3000);
 }
-

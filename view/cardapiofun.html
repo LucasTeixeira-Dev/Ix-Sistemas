@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
-    <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <title>Ix-sistemas</title>
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+        <link rel="sortcut icon" href="./assets/site.jpg" type="image/jpg" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <title>Ix-sistemas</title>
+    </head>
 
-<body>
+<body onload="listaProduto()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -28,7 +28,7 @@
     <main class="col-100 menu-urls">
         <div class="header-2">
             <div class="menu">
-                <ul><center>
+                <ul>
                     <li>
                         <a href="./homecliente.html">Inicío</a>
                     </li>
@@ -36,46 +36,35 @@
                         <a href="./cardapiocliente.html">Cardapio</a>
                     </li>
                     <li>
-                        <a href="./login.html">Sign In</a>
+                        <a href="./pedidofun.html">Pedidos</a>
                     </li>
-                </center>
+                    <li>
+                        <a href="./login.html">Sign up</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </main>
 
-     <div class="login-wrap" style="margin-left: 400px;">
-	<div class="login-html">
-        <label><h1><center>Acessar ao Ix-Sistema</center></h1></label>
-		<div class="login-form">
-				<div class="group">
-					<label for="login" class="label">Login</label>
-					<input id="login" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="senha" class="label">Senha:</label>
-					<input id="senha" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Continuar conectado</label>
-				</div>
-                <div class="group">
-					<button type="button" value="Acessar" onclick="acessar()" style="width: 375px; height: 37px; background-color: #ffd600; border-radius: 16px;">Logar</button>
-				</div>
-				
-				
-					<a href="#forgot">Esqueceu a Senha?</a>
-				</div>
-			</div>
-			
-				</div>
-		</div>
-	</div>
-</div>                                        
-<div class="msg">
-    <p id="mensagem">Mensagens do Sistema</p>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th colspan="8">Cardapio</th>
+        </tr>
+        <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+        <tbody id="produto">
+        </tbody>
+               <div class="msg">
+                  <p id="mensagem">Mensagens do Sistema</p>
+              </div>
+    </table>
     <footer>
         <div class="col-100 footer">
             <div class="content">
@@ -114,7 +103,7 @@
             </p>
         </div>
     </div>
-    <script src="login.js"></script>
+    <script src="cardapiofun.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>
