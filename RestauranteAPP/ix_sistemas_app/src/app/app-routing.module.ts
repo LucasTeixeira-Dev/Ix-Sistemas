@@ -12,20 +12,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-  },
-    {
-    path: 'cardapio',
-    loadChildren: () => import('./pages/cardapio/cardapio.module').then( m => m.CardapioPageModule)
-  },
-    {
-    path: 'promocao',
-    loadChildren: () => import('./pages/promocao/promocao.module').then( m => m.PromocaoPageModule)
-  },  {
     path: 'cart-modal',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
+  },  {
+    path: 'pedidos',
+    loadChildren: () => import('./pages/pedidos/pedidos.module').then( m => m.PedidosPageModule)
   },
+
 
 ];
 @NgModule({
