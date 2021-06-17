@@ -42,7 +42,7 @@ export class CartModalPage implements OnInit {
  
     let alert = await this.alertCtrl.create({
       header: 'Obrigado por pedir!',
-      message: 'Sua refeição será entregue o mais rápido possível',
+      message: 'Sua refeição será entregue o mais rápido possível.',
       buttons: ['OK']
     });
     alert.present().then(() => {
