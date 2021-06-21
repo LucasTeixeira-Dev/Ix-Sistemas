@@ -1,0 +1,1 @@
+CREATE view vw_itens_pedido_produto as SELECT itens.id_pedido, produto.nome, pedido.data, pedido.hora, pedido.status, pedido.obs FROM `itens` inner JOIN produto on itens.id_produto = produto.id_produto inner JOIN pedido on itens.id_pedido = pedido.id_pedido

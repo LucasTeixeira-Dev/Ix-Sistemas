@@ -26,7 +26,7 @@
 						isset($arr["login"]) &&
 						isset($arr["senha"]) &&
 						isset($arr["tipo"])
-					){
+					){//cadastro usuario
 						$u = new Usuario();
 						$u->setLogin($arr["login"]);
 						$u->setSenha($arr["senha"]);
@@ -34,7 +34,12 @@
 		
 						$iu = new UsuarioDAO();
 						$result = $iu->create($u);
-					}else {
+					}else if(isset($arr["login"]) &&
+							isset($arr["senha"])){//login
+								$iu = new UsuarioDAO();
+								$result = $iu->readLogin($arr["login"],$arr["senha"]);
+							
+					}else{//erro
 						$result["status"] = "ERRO-01";
 					}
 				}else if($arr["verbo"] == "DELETE") {
@@ -78,7 +83,7 @@
 		}
 
 	}
-}
+
 		/* Processa Local
 		var $ud;
 
