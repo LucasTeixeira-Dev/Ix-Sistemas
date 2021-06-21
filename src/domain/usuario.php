@@ -45,7 +45,7 @@
 			$tipo = $usuario->getTipo();
 			
 			try {
-                $query = "INSERT INTO usuario (login, senha, tipo) VALUES ('$login', '$senha', '$tipo')";
+                $query = "INSERT INTO usuario (login, senha, tipo) VALUES ('$login', md5('$senha'), '$tipo')";
                 
 				$con = new Connection();
 				if(Connection::getInstance()->exec($query) >= 1){
@@ -77,6 +77,31 @@
 				$con = new Connection();
 				
 				$resultSet = Connection::getInstance()->query($query);
+			    while($row = $resultSet->fetchObject()){
+			        $result[] = $row;
+			    }
+			    
+				$con = null;
+			}catch(PDOException $e) {
+				$result["status"] = "PDO".$e->getCode();
+			}
+
+			return $result;
+		}
+
+		function readLogin($login,$senha) {
+			$result = array();
+			
+			try {
+			
+		        $cond = " WHERE login = '$login' and senha = md5('$senha')";
+			    
+				$query = "SELECT * FROM usuario" . $cond;
+				
+				$con = new Connection();
+				
+				$resultSet = Connection::getInstance()->query($query);
+				
 			    while($row = $resultSet->fetchObject()){
 			        $result[] = $row;
 			    }
@@ -142,7 +167,7 @@
 			return $result;
 		}
 	}
-}
+
 		/* DAO Local
 			function create($usuario) {
 			$result = array();

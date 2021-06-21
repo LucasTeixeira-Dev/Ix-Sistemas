@@ -9,6 +9,7 @@ function acessar() {
     if (login.value != "" && senha.value != "") {
         dados.append("login", login.value);
         dados.append("senha", senha.value);
+        dados.append("verbo", "POST");
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
                 let resp = JSON.parse(this.responseText);
@@ -18,16 +19,14 @@ function acessar() {
                 } else {
                     if (resp[0].tipo === "Gerente") {
                         destino += "../index-ge.html";
-                    } else if (resp[0].tipo === "Chapeiro") {
+                    } else if (resp[0].tipo === "Chapeiro" || resp[0].tipo === "Garçom") {
                         destino += "../indexfun.html";
-                    } else if (resp[0].tipo === "Garçom") {
-                        destino += "../indexfun.html"; 
-                    }else {
+                    } else {
                         destino += "./login.html";
                     }
                     localStorage.setItem('tipo', resp[0].tipo);
                     localStorage.setItem('id_usuario', resp[0].id_usuario);
-                    window.location.href = destino + "?id_usuario=" + resp[0].id_usuario + "login=" + resp[0].login + "tipo=" + resp[0].tipo;
+                    window.location.href = destino + "?id_usuario=" + resp[0].id_usuario + "&login=" + resp[0].login + "&tipo" + resp[0].tipo;
                 }
             }
         });
