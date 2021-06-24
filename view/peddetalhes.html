@@ -63,6 +63,15 @@
             <th colspan="8">Detalhes dos Pedidos</th>
         </tr>
         <tr>
+            <form>
+                <td></td>
+                <td></td>
+                <td><input type="number" id="id_pedido"></td>
+                <td><button type="button" value="Criar" onclick="listaPeddetalhes()">Lista detalhes dos Pedidos</button></td>
+           
+            </form>
+     </tr>
+        <tr>
             <th>id_pedido</th>
             <th>Produto</th>
             <th>data</th>
@@ -74,18 +83,6 @@
         <tbody id="peddetalhes">
         </tbody>
             <tfoot >
-                <tr>
-                       <form>
-                           <td><input type="number" id="id_pedido"></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>  
-                           <td><button type="button" value="Criar" onclick="listaPeddetalhes()">Lista detalhes dos Pedidos</button></td>
-                      
-                       </form>
-                </tr>
             </tfoot>
                <div class="msg">
                   <p id="mensagem">Mensagens do Sistema</p>
