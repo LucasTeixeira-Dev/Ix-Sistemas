@@ -15,7 +15,7 @@ function listaProduto() {
             console.log(data);
             data.forEach((val) => {
                 let row = document.createElement("tr");
-                row.innerHTML = `<tr><td>${val.id_produto}</td>`;
+                row.innerHTML = `<tr><td></td>`;
                 row.innerHTML += `<tr><td>${val.nome}</td>`;
                 row.innerHTML += `<tr><td>${val.descricao}</td>`;
                 row.innerHTML += `<tr><td>${val.valor}</td>`;

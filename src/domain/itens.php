@@ -1,6 +1,6 @@
 <?php
 
-	class Item {
+	class Itens {
 		var $idPedido;
 		var $idProduto;
 

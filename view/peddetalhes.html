@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 
 <head>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -9,7 +9,7 @@
     
 </head>
 
-<body onload="listaPedido()">
+<body onload="listaPeddetalhes()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -56,12 +56,11 @@
             </div>
         </div>
     </main>
-                                                <!-- COMEÇO DO CARDAPIO -->
 
 <table>
     <thead>
         <tr>
-            <th colspan="8">Pedidos</th>
+            <th colspan="8">Detalhes dos Pedidos</th>
         </tr>
         <tr>
             <th>id_pedido</th>
@@ -77,14 +76,13 @@
             <tfoot >
                 <tr>
                        <form>
-                           <td></td>
                            <td><input type="number" id="id_pedido"></td>
-                           <td><input type="text" id="nome"></td>
-                           <td><input type="text" id="data" ></td>
-                           <td><input type="text" id="hora" ></td>
-                           <td><input type="text" id="status" ></td>
-                           <td><input type="text" id="obs" ></td>     
-                           <td><button type="button" value="Criar" onclick="criaPedido()">Criar Pedido</button></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>  
+                           <td><button type="button" value="Criar" onclick="listaPeddetalhes()">Lista detalhes dos Pedidos</button></td>
                       
                        </form>
                 </tr>
