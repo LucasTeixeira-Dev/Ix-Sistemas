@@ -1,84 +1,54 @@
 <?php
 
 	class Itens {
-		var $idPedido;
-		var $idProduto;
+		var $id_pedido;
 
-		function getIdPedido(){
-			return $this->idPedido;
+		function getId_pedido(){
+			return $this->id_pedido;
 		}
-		function setIdPedido($idPedido){
-			$this->idPedido = $idPedido;
-		}
-
-		function getIdProduto(){
-			return $this->idProduto;
-		}
-		function setIdProduto($idProduto){
-			$this->idProduto = $idProduto;
+		function setId_pedido($id_pedido){
+			$this->id_pedido = $id_pedido;
 		}
 	}
 
 	class ItensDAO {
-		function create($itens) {
+		function read($id_pedido) {
 			$result = array();
-			$idPedido = $itens->getIdPedido();
-			$idProduto = $itens->getIdProduto();
-			$query = "INSERT INTO itens VALUES ('$idPedido', '$idProduto')";
+			
 			try {
-				
-				$con = new Connection();
-				if(Connection::getInstance()->exec($query) >= 1){
-					$result = $itens;
-				} else {
-					$result["err"] = "Erro ao adicionar pedido";
+				if($id_pedido == 0){
+				    $cond = "";
+				}else{
+				    $cond = " WHERE id_pedido = $id_pedido";
 				}
-
-				$con = null;
-			}catch(PDOException $e) {
-				$result["error"] = $e->getMessage();
-			}
-
-			return $result;
-		}
-
-		function read($idPedido) {
-			$result = array();
-			$query = "SELECT * FROM itens WHERE idPedido = '$idPedido'";
-			try {
+				$query = "SELECT * FROM vw_itens_pedido_produto" . $cond;
 				
 				$con = new Connection();
+				
 				$resultSet = Connection::getInstance()->query($query);
-				if($resultSet){
-					while($row = $resultSet->fetchObject()){
-						$item = new Item();
-						$item->setIdPedido($row->id_pedido);
-						$item->setIdProduto($row->id_produto);
-						$result[] = $item;
-
+				
+				while($row = $resultSet->fetchObject()){
+					$result[] = $row;
+						
 				}
-			}
 				$con = null;
 			}catch(PDOException $e) {
-				$result["error"] = $e->getMessage();
+				$result["status"] = "PDO".$e->getCode();
 			}
 
 			return $result;
 		}
-
 		function readAll() {
 			$result = array();
-			$query = "SELECT * FROM itens";
+			$query = "SELECT * FROM vw_itens_pedido_produto";
 			try {
 				
 				$con = new Connection();
 				$resultSet = Connection::getInstance()->query($query);
 					while($row = $resultSet->fetchObject()){
 						$item = new Item();
-						$item->setIdPedido($row->idpedido);
-						$item->setIdProduto($row->idproduto);
-						$item->setQuantidade($row->quantidade);
-						$result[] = $item;
+						$item->setId_pedido($row->id_pedido);
+						$result[] = $itens;
 
 				}
 			
@@ -89,49 +59,5 @@
 
 			return $result;
 		}
-
-		function update($pedido) {
-			$result = array();
-			$idPedido = $pedido->getIdPedido();
-			$idProduto = $pedido->getIdProduto();
-			$quantidade = $pedido->getQuantidade();
-			$result = array();
-			$query = "UPDATE itens SET quantidade = '$quantidade' WHERE idPedido = $idPedido and idProduto = $idProduto";
-			try {
-				
-				$con = new Connection();
-				$status = Connection::getInstance()->prepare($query);
-				if($status->execute()){
-					$result[] = $pedido;
-				} else {
-					$result["err"] = "Não foi possivel atualizar os dados";
-				}
-
-				$con = null;
-			}catch(PDOException $e) {
-				$result["error"] = $e->getMessage();
-			}
-
-			return $result;
-		}
-
-		function delete($idPedido,$idProduto) {
-			$result = array();
-			$query = "DELETE FROM itens WHERE idPedido = $idPedido and idProduto = $idProduto";
-			try {
-				
-				$con = new Connection();
-				if(Connection::getInstance()->exec($query) >= 1){
-					$result["sucesso"] = "item excluido com sucesso";
-				} else {
-					$result["err"] = "Nao foi possivel excluir item, valide o id do pedido e o id do produto";
-				}
-
-				$con = null;
-			}catch(PDOException $e) {
-				$result["error"] = $e->getMessage();
-			}
-
-			return $result;
-		}
 	}
+?>
