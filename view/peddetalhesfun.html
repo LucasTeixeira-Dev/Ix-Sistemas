@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 
 <head>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -9,7 +9,7 @@
     
 </head>
 
-<body onload="listaPedido()">
+<body onload="listaPeddetalhes()">
     <header class="menu-principal">
         <main>
             <div class="header-1">
@@ -35,7 +35,7 @@
                         <a href="./homefun.html">Inicío</a>
                     </li>
                     <li>
-                        <a href="./cardapiofun.html">Cardápio</a>
+                        <a href="./cardapiofun.html">Cardapio</a>
                     </li>
                     <li>
                         <a href="./pedidofun.html">Pedidos</a>
@@ -44,32 +44,45 @@
                         <a href="./peddetalhesfun.html">Detalhes dos Pedidos</a>
                     </li>
                     <li>
-                        <a href="./homecliente.html">Sign up</a>
+                        <a href="./homefun.html">Sign up</a>
                     </li>
                 </ul>
             </div>
         </div>
     </main>
+<center>
 <table>
     <thead>
         <tr>
-            <th colspan="8">Pedidos</th>
+            <th colspan="8">Detalhes dos Pedidos</th>
         </tr>
         <tr>
+            <form>
+                <td></td>
+                <td></td>
+                <td><input type="number" id="id_pedido"></td>
+                <td><button type="button" value="Criar" onclick="listaPeddetalhes()">Lista detalhes dos Pedidos</button></td>
+           
+            </form>
+     </tr>
+        <tr>
             <th>id_pedido</th>
-            <th>id_mesa</th>
+            <th>Produto</th>
             <th>data</th>
             <th>hora</th>
             <th>status</th>
             <th>obs</th>
         </tr>
     </thead>
-        <tbody id="pedido">
+        <tbody id="peddetalhes">
         </tbody>
+            <tfoot >
+            </tfoot>
                <div class="msg">
                   <p id="mensagem">Mensagens do Sistema</p>
               </div>
     </table>
+</center>
     <footer>
         <div class="col-100 footer">
             <div class="content">
@@ -108,7 +121,7 @@
             </p>
         </div>
     </div>
-    <script src="pedidofun.js"></script>
+    <script src="peddetalhes.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery-migrate.js"></script>
     <script type="text/javascript" src="./js/slick.min.js"></script>
