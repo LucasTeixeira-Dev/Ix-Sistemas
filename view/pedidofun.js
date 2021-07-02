@@ -15,12 +15,12 @@ function listaPedido() {
             console.log(data);
             data.forEach((val) => {
                 let row = document.createElement("tr");
-                row.innerHTML = `<tr><td>${val.id_pedido}</td>`;
-                row.innerHTML += `<tr><td>${val.id_mesa}</td>`;
-                row.innerHTML += `<tr><td>${val.data}</td>`;
-                row.innerHTML += `<tr><td>${val.hora}</td>`;
-                row.innerHTML += `<tr><td>${val.status}</td>`;
-                row.innerHTML += `<tr><td>${val.obs}</td>`;
+                row.innerHTML = `<tr><td><center><h3>${val.id_pedido}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.id_mesa}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.data}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.hora}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.status}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.obs}</h3></center></td></tr>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editPedido(this)'>Edit</button></td></tr>`;
                 tablePedido.appendChild(row);
             });

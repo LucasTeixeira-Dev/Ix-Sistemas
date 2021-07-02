@@ -15,10 +15,10 @@ function listaUsuario() {
             console.log(data);
             data.forEach((val) => {
                 let row = document.createElement("tr");
-                row.innerHTML = `<tr><td>${val.id_usuario}</td>`;
-                row.innerHTML += `<tr><td>${val.login}</td>`;
-                row.innerHTML += `<tr><td>${val.senha}</td>`;
-                row.innerHTML += `<tr><td>${val.tipo}</td>`;
+                row.innerHTML = `<tr><td><center><h3>${val.id_usuario}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.login}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.senha}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.tipo}</h3></center></td></tr>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editUsuario(this)'>Edit</button><button onclick='delUsuario(this)'>Del</button></td></tr>`;
                 tableUsuario.appendChild(row);
             });
