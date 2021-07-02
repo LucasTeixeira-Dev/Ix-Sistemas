@@ -13,9 +13,9 @@ function listaMesa() {
         .then(function (data) {
             data.forEach((val) => {
                 let row = document.createElement("tr");
-                row.innerHTML = `<tr><td>${val.id_mesa}</td>`;
-                row.innerHTML += `<tr><td>${val.descricao}</td>`;
-                row.innerHTML += `<tr><td>${val.id_usuario}</td>`;
+                row.innerHTML = `<tr><td><center><h3>${val.id_mesa}<h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.descricao}<h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.id_usuario}<h3></center></td></tr>`;
                 row.innerHTML += `<td style="padding:3px"><button onclick='editMesa(this)'>Edit</button><button onclick='delMesa(this)'>Del</button></td></tr>`;
                 tableMesa.appendChild(row);
             });

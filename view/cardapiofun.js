@@ -15,11 +15,11 @@ function listaProduto() {
             console.log(data);
             data.forEach((val) => {
                 let row = document.createElement("tr");
-                row.innerHTML = `<tr><td>${val.id_produto}</td>`;
-                row.innerHTML += `<tr><td>${val.nome}</td>`;
-                row.innerHTML += `<tr><td>${val.descricao}</td>`;
-                row.innerHTML += `<tr><td>${val.valor}</td>`;
-                row.innerHTML += `<tr><td>${val.tipos}</td>`;
+                row.innerHTML = `<tr><td><center><h3>${val.id_produto}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.nome}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.descricao}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.valor}</h3></center></td></tr>`;
+                row.innerHTML += `<tr><td><center><h3>${val.tipos}</h3></center></td></tr>`;
                 tableProduto.appendChild(row);
             });
         }) 
